@@ -28,15 +28,21 @@ logo.svg
 * The div with id="root" is the target div.
 * Re-create `src/App.js`:
 
-```
-import React from 'react';
+  ```
+  import React from 'react';
 
-const App = () => {
-  return(
-  <h1>Hello</h1>
-  );
-}
+  const App = () => {
+    return(
+    <h1>Hello</h1>
+    );
+  }
 
-export default App;
+  export default App;
 
-```
+  ```
+* Remove from `src/index.js`:
+
+  ```
+  import './index.css';
+  ```
+*
