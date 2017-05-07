@@ -50,21 +50,37 @@ logo.svg
 
 * Replace:
 
-```
-// in `App.js`
-// replace the stateless function/class/componenet
- const App = () => {
-   return(
-   <h1>Hello</h1>
-   );
- }
-// with class components
-// stateless function cannot have a state but calss components can!
-class App extends React.Component {
-  render() {
-    return <h1 className="hello">Hello World!</h1>
+  ```
+  // in `App.js`
+  // replace the stateless function/class/componenet
+   const App = () => {
+     return(
+     <h1>Hello</h1>
+     );
+   }
+  // with class components
+  // stateless function cannot have a state but calss components can!
+  class App extends React.Component {
+    render() {
+      return <h1 className="hello">Hello World!</h1>
+    }
   }
-}
 
-```
+  ```
 #### Side Note: the render method can only return one element/tag so you have to enclose everything in a <div>
+
+### 3. Use props:
+* Add props:
+
+  ```
+  // in `src/index.js`:
+  <App txt="This is the prop txt" cat={3}/>,
+  ```
+  ```
+  // in `src/App.js` :
+  render() {
+    let txt = this.props.txt
+    let cat = this.props.cat
+    return <h1 className="hello">{txt} {cat}</h1>
+  }
+  ```

@@ -8,8 +8,15 @@ import React from 'react';
 
 class App extends React.Component {
   render() {
-    return <h1 className="hello">Hello World!</h1>
+    let txt = this.props.txt
+    let cat = this.props.cat
+    return <h1 className="hello">{txt} {cat}</h1>
   }
+}
+
+App.prpTypes = {
+  txt: React.PropTypes.string,
+  cat: React.PropTypes.number.isRequired
 }
 
 
