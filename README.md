@@ -29,7 +29,7 @@ logo.svg
 * The div with id="root" is the target div.
 * Re-create `src/App.js`:
 
-  ```javascript
+  ```js
   import React from 'react';
 
   const App = () => {
@@ -43,14 +43,14 @@ logo.svg
   ```
 * Remove from `src/index.js`:
 
-  ```javascript
+  ```js
   import './index.css';
   ```
 ### 2. Create first Component:
 
 * Replace:
 
-  ```javascript
+  ```js
   // in `App.js`
   // replace the stateless function/class/componenet
    const App = () => {
@@ -72,11 +72,11 @@ logo.svg
 ### 3. Use props:
 * Add props:
 
-  ```javascript
+  ```js
   // in `src/index.js`:
   <App txt="This is the prop txt" cat={3}/>,
   ```
-  ```javascript
+  ```js
   // in `src/App.js` :
   render() {
     let txt = this.props.txt
@@ -86,7 +86,7 @@ logo.svg
   ```
 * Add default props:
 
-  ```javascript
+  ```js
   // in `App.js`:
   // add
   App.defaultProps = {
@@ -96,7 +96,7 @@ logo.svg
   export default App;
 
   ```
-  ```javascript
+  ```js
   // in index.js:
   //remove txt="This is the prop txt"
   <App cat={5}/>,
@@ -106,7 +106,7 @@ logo.svg
 
 ### 4. Use state:
 
-  ```javascript
+  ```js
   // in `App.js` add constructor method:
   constructor() {
       super(); //to give the key word this the context within the App component not React.Component
