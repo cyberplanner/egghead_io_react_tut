@@ -11,4 +11,19 @@ App.test.js
 index.css
 logo.svg
 ```
+* Re-create `public/index.html` from scratch:
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>React App</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+  </body>
+</html>
+```
+* The div with id="root" is the target div.
 *
