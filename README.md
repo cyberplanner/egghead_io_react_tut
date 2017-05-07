@@ -13,7 +13,7 @@ index.css
 logo.svg
 ```
 * Re-create `public/index.html` from scratch:
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -29,7 +29,7 @@ logo.svg
 * The div with id="root" is the target div.
 * Re-create `src/App.js`:
 
-  ```
+  ```javascript
   import React from 'react';
 
   const App = () => {
@@ -43,14 +43,14 @@ logo.svg
   ```
 * Remove from `src/index.js`:
 
-  ```
+  ```javascript
   import './index.css';
   ```
 ### 2. Create first Component:
 
 * Replace:
 
-  ```
+  ```javascript
   // in `App.js`
   // replace the stateless function/class/componenet
    const App = () => {
@@ -72,11 +72,11 @@ logo.svg
 ### 3. Use props:
 * Add props:
 
-  ```
+  ```javascript
   // in `src/index.js`:
   <App txt="This is the prop txt" cat={3}/>,
   ```
-  ```
+  ```javascript
   // in `src/App.js` :
   render() {
     let txt = this.props.txt
@@ -86,7 +86,7 @@ logo.svg
   ```
 * Add default props:
 
-  ```
+  ```javascript
   // in `App.js`:
   // add
   App.defaultProps = {
@@ -96,7 +96,7 @@ logo.svg
   export default App;
 
   ```
-  ```
+  ```javascript
   // in index.js:
   //remove txt="This is the prop txt"
   <App cat={5}/>,
@@ -104,10 +104,9 @@ logo.svg
   ```
   The page will now render the default txt and prop cat that was passed "this is the default txt 5"
 
-
 ### 4. Use state:
 
-  ```
+  ```javascript
   // in `App.js` add constructor method:
   constructor() {
       super(); //to give the key word this the context within the App component not React.Component
