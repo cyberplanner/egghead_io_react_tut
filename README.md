@@ -3,6 +3,7 @@
 The course could be found [here](https://egghead.io/lessons/react-react-fundamentals-development-environment-setup).
 
 ## Notes on the walkthrough
+### 1. Create the empty app:
 * `create-react-app <nameoftheapp>`
 * Delete
 ```
@@ -45,4 +46,25 @@ logo.svg
   ```
   import './index.css';
   ```
-*
+### 2. Create first Component:
+
+* Replace:
+
+```
+// in `App.js`
+// replace the stateless function/class/componenet
+ const App = () => {
+   return(
+   <h1>Hello</h1>
+   );
+ }
+// with class components
+// stateless function cannot have a state but calss components can!
+class App extends React.Component {
+  render() {
+    return <h1 className="hello">Hello World!</h1>
+  }
+}
+
+```
+#### Side Note: the render method can only return one element/tag so you have to enclose everything in a <div>
