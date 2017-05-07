@@ -2,6 +2,8 @@
 ## Source:
 The course could be found [here](https://egghead.io/lessons/react-react-fundamentals-development-environment-setup).
 
+---------
+
 ## Notes on the walkthrough
 ### 1. Create the empty app:
 * `create-react-app <nameoftheapp>`
@@ -46,6 +48,8 @@ logo.svg
   ```js
   import './index.css';
   ```
+------
+
 ### 2. Create first Component:
 
 * Replace:
@@ -68,6 +72,7 @@ logo.svg
 
   ```
 #### Side Note: the render method can only return one element/tag so you have to enclose everything in a <div>
+-------------
 
 ### 3. Use props:
 * Add props:
@@ -103,8 +108,9 @@ logo.svg
 
   ```
   The page will now render the default txt and prop cat that was passed "this is the default txt 5"
-
+-----------
 ### 4. Use state:
+* Add constructor:
 
   ```js
   // in `App.js` add constructor method:
@@ -123,3 +129,25 @@ logo.svg
   ```
 
 #### Important Note: Now the browser will render the state insted of default props or passed props
+
+* Add update method (custom method to trigger upon an event):
+
+  ```js
+  // in `App.js` after the constructor:
+  update(e) { // e for event
+    this.setState({
+      txt: e.target.value
+    })
+  }
+  // And update the render() method:
+  render() {
+    return(
+      <div>
+        <input type="text" onChange={this.update.bind(this)}/>
+        <h1>{this.state.txt} - {this.state.cat}</h1>
+      </div>
+    );
+  }
+  ```
+
+  ##### Side Note: I need to research the bind method more

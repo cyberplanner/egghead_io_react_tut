@@ -10,13 +10,23 @@ class App extends React.Component {
   constructor() {
     super(); //to give the key word this the context within the App component not React.Component
     this.state = {
-      txt: 'this is the state txt'
+      txt: 'this is the state txt',
+      cat: 0
     }
+  }
+
+  update(e) { // e for event
+    this.setState({
+      txt: e.target.value
+    })
   }
 
   render() {
     return(
-      <h1>{this.state.txt}</h1>
+      <div>
+        <input type="text" onChange={this.update.bind(this)}/>
+        <h1>{this.state.txt} - {this.state.cat}</h1>
+      </div>
     );
   }
 }
