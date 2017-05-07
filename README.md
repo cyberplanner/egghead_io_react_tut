@@ -84,3 +84,22 @@ logo.svg
     return <h1 className="hello">{txt} {cat}</h1>
   }
   ```
+* Add default props:
+
+  ```
+  // in `App.js`:
+  // add
+  App.defaultProps = {
+    txt: "this is the default txt"
+  }
+  // before
+  export default App;
+
+  ```
+  ```
+  // in index.js:
+  //remove txt="This is the prop txt"
+  <App cat={5}/>,
+
+  ```
+  The page will now render the default txt and prop cat that was passed "this is the default txt 5"
