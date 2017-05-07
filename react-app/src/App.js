@@ -7,10 +7,17 @@ import React from 'react';
 // }
 
 class App extends React.Component {
+  constructor() {
+    super(); //to give the key word this the context within the App component not React.Component
+    this.state = {
+      txt: 'this is the state txt'
+    }
+  }
+
   render() {
-    let txt = this.props.txt
-    let cat = this.props.cat
-    return <h1 className="hello">{txt} {cat}</h1>
+    return(
+      <h1>{this.state.txt}</h1>
+    );
   }
 }
 

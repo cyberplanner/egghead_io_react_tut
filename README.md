@@ -103,3 +103,24 @@ logo.svg
 
   ```
   The page will now render the default txt and prop cat that was passed "this is the default txt 5"
+
+
+### 4. Use state:
+
+  ```
+  // in `App.js` add constructor method:
+  constructor() {
+      super(); //to give the key word this the context within the App component not React.Component
+      this.state = {
+        txt: 'this is the state txt'
+      }
+    }
+  // And change render()
+  render() {
+    return(
+      <h1>{this.state.txt}</h1>
+    );
+  }
+  ```
+
+#### Important Note: Now the browser will render the state insted of default props or passed props
