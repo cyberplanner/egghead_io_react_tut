@@ -20,6 +20,7 @@ class App extends Component {
       <div>
         <h1>{this.state.txt} - {this.state.cat}</h1>
         <Widget update={this.update.bind(this)}/>
+        <Title/>
         <Button>I <Heart/> React</Button>
       </div>
     );
@@ -55,4 +56,19 @@ class Heart extends Component {
   }
 }
 
+const Title = (props) => {
+  return(
+    <h1>Title: {props.text}</h1>
+  );
+}
+
+Title.propTypes = {
+  // text: React.PropTypes.string.isRequired  <= simple built in validation
+  // further validations could be achived through a method
+  text(props, propName, component) {
+    if (!(propName in props)) {
+      return new Error(`missing ${propName}`);
+    }
+  }
+}
 export default App;
