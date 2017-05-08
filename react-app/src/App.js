@@ -20,7 +20,7 @@ class App extends Component {
       <div>
         <h1>{this.state.txt} - {this.state.cat}</h1>
         <Widget update={this.update.bind(this)}/>
-        <Title/>
+        <Title text="123456"/>
         <Button>I <Heart/> React</Button>
       </div>
     );
@@ -68,6 +68,9 @@ Title.propTypes = {
   text(props, propName, component) {
     if (!(propName in props)) {
       return new Error(`missing ${propName}`);
+    }
+    if (props[propName].length < 6) {
+      return new Error(`${propName} was too short`);
     }
   }
 }
