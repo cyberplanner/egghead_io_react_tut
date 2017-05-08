@@ -1,12 +1,6 @@
-import React from 'react';
-// stateless function/class/componenet
-// const App = () => {
-//   return(
-//   <h1>Hello</h1>
-//   );
-// }
+import React, { Component } from 'react';
 
-class App extends React.Component {
+class App extends Component {
   constructor() {
     super(); //to give the key word this the context within the App component not React.Component
     this.state = {
@@ -24,8 +18,9 @@ class App extends React.Component {
   render() {
     return(
       <div>
-        <input type="text" onChange={this.update.bind(this)}/>
         <h1>{this.state.txt} - {this.state.cat}</h1>
+        <Widget update={this.update.bind(this)}/>
+        <Button>I <Heart/> React</Button>
       </div>
     );
   }
@@ -40,5 +35,24 @@ App.defaultProps = {
   txt: "this is the default txt"
 }
 
+const Widget = (props) => {
+  return(
+    <input type="text" onChange={props.update}/>
+  );
+}
+
+const Button = (props) => {
+  return(
+    <button>{props.children}</button>
+  );
+}
+
+class Heart extends Component {
+  render() {
+    return(
+      <span>&hearts;</span>
+    );
+  }
+}
 
 export default App;
